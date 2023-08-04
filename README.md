@@ -5,13 +5,14 @@ This project is a simple utility written in Go, used for detecting public IP cha
 
 ## Installation
 
-You can install the IP Change Notifier by cloning the repository and then running:
+You can install using the `go install` command
 
 ```
-go build -o ipchange
+go install github.com/romaingallez/ipchange@latest
 ```
 
 This command will build an executable named `ipchange`.
+
 
 ## Usage
 
