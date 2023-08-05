@@ -3,6 +3,10 @@
 
 This project is a simple utility written in Go, used for detecting public IP changes in your network. It communicates with `ipinfo.io` API to get the public IP information. Whenever the network interface or the public IP changes, the utility updates its state, which is stored in a local TOML file.
 
+I build it to use it with polybar to show the current ip for both lan and wan (before i called ipinfo evey x but i had a lot of trouble detecting network change in the bash scipt and staying out of api rate limit)
+
+you can find the polybar config in the polybar folder (with the bash script)
+
 ## Installation
 
 You can install using the `go install` command
@@ -57,6 +61,7 @@ This utility uses the following dependencies:
 ## Contributing
 
 Please feel free to open an issue or a pull request if you want to contribute to this project!
+
 
 ## License
 
