@@ -119,29 +119,6 @@ func main() {
 		log.Printf("OS %s is not supported", runtime.GOOS)
 	}
 
-	// if it was less than 5 minutes since the last check, return the last IP without calling ipinfo.io
-	// interfaces, _ := net.Interfaces()
-	// for _, i := range interfaces {
-	// 	addrs, _ := i.Addrs()
-	// 	for _, addr := range addrs {
-	// 		var ip net.IP
-	// 		switch v := addr.(type) {
-	// 		case *net.IPNet:
-	// 			ip = v.IP
-	// 		case *net.IPAddr:
-	// 			ip = v.IP
-	// 		}
-	// 		if ip.IsGlobalUnicast() {
-	// 			if i.Name != storage.LastNetwork || addr.String() != storage.LastSubnet {
-	// 				storage.LastNetwork = i.Name
-	// 				storage.LastSubnet = addr.String()
-	// 				networkChanged = true
-	// 			}
-	// 			break
-	// 		}
-	// 	}
-	// }
-
 	if networkChanged {
 
 		ip, err := getPublicIP(config)
@@ -154,11 +131,6 @@ func main() {
 		saveStorage(storagePath, storage)
 	}
 
-	// result := map[string]interface{}{
-	// 	"last_time_check": storage.LastCheckTime.Format(time.RFC3339),
-	// 	"public_op":       storage.LastIP,
-	// 	"ip_changed":      ipChanged,
-	// }
 	storage.IPChanged = ipChanged
 
 	jsonResult, _ := json.Marshal(storage)
