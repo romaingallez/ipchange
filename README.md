@@ -1,7 +1,7 @@
 
 # IP Change Notifier
 
-This project is a simple utility written in Go, used for detecting public IP changes in your network. It communicates with `ipinfo.io` API to get the public IP information. Whenever the network interface or the public IP changes, the utility updates its state, which is stored in a local TOML file.
+A simple utility written in Go, used for detecting public IP changes. It communicates with `ipinfo.io` API to get the public IP information. Whenever the network interface or the public IP changes, the utility updates its state, which is stored in a local TOML file.
 
 I build it to use it with polybar to show the current ip for both lan and wan (before i called ipinfo evey x but i had a lot of trouble detecting network change in the bash scipt and staying out of api rate limit)
 
@@ -30,7 +30,7 @@ The utility does not take any command-line arguments. All configurations are man
 
 ## Configuration
 
-The IP Change Notifier uses two TOML files located in the `.local/ipchange` directory under the user's home directory:
+The IP Change Notifier uses two TOML files located in the `$HOME/.local/ipchange` directory:
 
 - `config.toml`: Stores the API configuration details:
   - `Token`: Your `ipinfo.io` access token.
